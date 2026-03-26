@@ -12,7 +12,7 @@ export function useOrderSocket({ orders, showStartModal, isAdmin, onOrderAdded }
 
     socket.on("connect", () => {
       console.log("Socket connected:", socket.id);
-      onOrderAdded();
+      // onOrderAdded();
       // Ako NIJE admin i modal je zatvoren, javi se odmah pri spajanju
       if (!isAdmin && !showStartModal) {
         socket.emit("frontend-logged-in", { isAdmin, timestamp: new Date().toISOString() });
